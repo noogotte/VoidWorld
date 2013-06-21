@@ -1,0 +1,40 @@
+name: VoidWorld
+main: org.spiritofcode.bukkit.voidworld.VoidWorld
+version: 1.0.0.alpha
+depend: [Vault]
+
+commands:
+    voidworld:
+        description: Cette command permet d'accéder à toutes les sous commandes de ce plugin.
+        aliases: [vw]
+        permission: voidworld.<command>
+        usage: /voidworld <command...>
+
+permissions:
+    voidworld.*:
+        description: Donne l'accès à toutes les commandes VoidWorld.
+        children:
+            voidworld.load: true
+            voidworld.unload: true
+            voidworld.create: true
+            voidworld.delete: true
+            voidworld.spawn: true
+            voidworld.setspawn: true
+    voidworld.load:
+        description: Permet de charger un monde.
+        default: false
+    voidworld.unload:
+        description: Permet de décharger un monde.
+        default: false
+    voidworld.create:
+        description: Permet de créer un monde.
+        default: false
+    voidworld.delete:
+        description: Permet de supprimer un monde.
+        default: false
+    voidworld.spawn:
+        description: Permet d'aller au spawn d'un monde.
+        default: false
+    voidworld.setspawn:
+        description: Permet de fixer le spawn du monde courant.
+        default: false
